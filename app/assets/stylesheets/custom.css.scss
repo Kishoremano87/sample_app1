@@ -88,7 +88,9 @@ footer {
       color: $grayDarker;
     }
   }  
-
+  small { 
+    float: left; 
+  }
   ul {
     float: right;
     list-style: none;
