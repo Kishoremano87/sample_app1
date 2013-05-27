@@ -1,5 +1,8 @@
 SampleApp1::Application.routes.draw do
   
+
+  match '/signup', to: 'users#new'
+
   root              to: 'staticpages#home'
   match '/help',    to: 'staticpages#help'
   match '/about',   to: 'staticpages#about'

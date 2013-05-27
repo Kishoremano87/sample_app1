@@ -28,5 +28,20 @@ subject { page }
 		it { should have_content('Contact Us') }
 		it { should have_selector('title', text: full_title("Contact Us")) }
 	end
-	
+
+	it "should have the right link in the layout" do
+		visit root_path
+
+		click_link "About"
+		page.should have_selector 'title', text: full_title("About Us")
+		
+		click_link "Home"
+		page.should have_selector 'title', text: full_title("")
+
+		click_link "Help"
+		page.should have_selector 'title', text: full_title("Help")
+
+		click_link "Contact"
+		page.should have_selector 'title', text: full_title("Contact Us")
+	end
 end
